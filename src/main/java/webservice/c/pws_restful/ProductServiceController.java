@@ -40,4 +40,20 @@ public class ProductServiceController {
         productRepo.remove(id);
         return new ResponseEntity<>("Product is deleted successfully", HttpStatus.OK);
     }
+    
+    //PUT API
+    @RequestMapping(value = "/products/{id}", method = RequestMethod.PUT)
+    public ResponseEntity<Object> updateProduct(@PathVariable("id") String id, @RequestBody Product product) {
+	// Jika Id Produk yang ingin diedit tidak Ada
+        if(!productRepo.containsKey(id)){
+            return new ResponseEntity<>("Product Not Found, Please Check Again!", HttpStatus.NOT_FOUND);
+        }
+	// Jika Id Produk tersedia, maka dapat diupdate
+        else{
+            productRepo.remove(id);
+            product.setId(id);
+            productRepo.put(id, product);
+            return new ResponseEntity<>("Product is updated successfully", HttpStatus.OK);
+        }
+    }
 }
