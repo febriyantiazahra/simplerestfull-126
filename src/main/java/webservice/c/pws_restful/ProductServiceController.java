@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package webservice.c.pws_restful;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,8 +15,8 @@ public class ProductServiceController {
     private static Map<String, Product> productRepo = new HashMap<>();
     static {
         Product honey = new Product();
-        honey.SetId("1");
-        honey.SetName("Honey");
+        honey.setId("1");
+        honey.setName("Honey");
         productRepo.put(honey.getId(), honey);
         
         Product almond = new Product();
