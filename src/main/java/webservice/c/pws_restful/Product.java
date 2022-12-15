@@ -12,6 +12,8 @@ package webservice.c.pws_restful;
 class Product {
     private String id;
     private String name;
+    private String qty;
+    private String price;
 
     public String getId() {
         return id;
@@ -27,5 +29,21 @@ class Product {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getQty() {
+        return qty;
+    }
+
+    public void setQty(String qty) {
+        this.qty = qty;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
     }
 }
